@@ -1,0 +1,64 @@
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add readme.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add LICENSE
+fatal: pathspec 'LICENSE' did not match any files
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add LICENSE
+fatal: pathspec 'LICENSE' did not match any files
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add LICENSE
+fatal: pathspec 'LICENSE' did not match any files
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   readme.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        LICENSE.txt
+
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add readme.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add LICENSE.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   LICENSE.txt
+        modified:   readme.txt
+
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commit -m"understand how stage works"
+[master a27321e] understand how stage works
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 LICENSE.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$
