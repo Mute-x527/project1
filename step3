@@ -1,0 +1,126 @@
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add readme.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commit -m"appeal GPL"
+[master 4d500bc] appeal GPL
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commit -m"append GPL"
+On branch master
+nothing to commit, working tree clean
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add readme.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commit -m"append GPL"
+On branch master
+nothing to commit, working tree clean
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git log
+commit 4d500bc42280adb95b3863393a47206d64e91906 (HEAD -> master)
+Author: Mutex <736408820@qq.com>
+Date:   Sat Dec 26 01:19:41 2020 +0800
+
+    appeal GPL
+
+commit 1dbd17d7115c138d4919754ce291d22d522fc54d
+Author: Mutex <736408820@qq.com>
+Date:   Sat Dec 26 01:15:45 2020 +0800
+
+    add distributed
+
+commit acee284cf78530c7221a36227c770d6589100b56
+Author: Mutex <736408820@qq.com>
+Date:   Sat Dec 26 01:09:30 2020 +0800
+
+    wrote a readme file
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git log--pretty=online
+git: 'log--pretty=online' is not a git command. See 'git --help'.
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git log --pretty=oneline
+4d500bc42280adb95b3863393a47206d64e91906 (HEAD -> master) appeal GPL
+1dbd17d7115c138d4919754ce291d22d522fc54d add distributed
+acee284cf78530c7221a36227c770d6589100b56 wrote a readme file
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git reset --hardHEAD^
+error: unknown option `hardHEAD^'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+   or: DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+
+    -q, --quiet           be quiet, only report errors
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --patch           select hunks interactively
+    -N, --intent-to-add   record only the fact that removed paths will be added later
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+    -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
+    --stdin               DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
+
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git reset --hard HEAD^
+HEAD is now at 1dbd17d add distributed
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git log
+commit 1dbd17d7115c138d4919754ce291d22d522fc54d (HEAD -> master)
+Author: Mutex <736408820@qq.com>
+Date:   Sat Dec 26 01:15:45 2020 +0800
+
+    add distributed
+
+commit acee284cf78530c7221a36227c770d6589100b56
+Author: Mutex <736408820@qq.com>
+Date:   Sat Dec 26 01:09:30 2020 +0800
+
+    wrote a readme file
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat reame.txt
+cat: reame.txt: No such file or directory
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git reset --hard 4d500
+HEAD is now at 4d500bc appeal GPL
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git reflog
+4d500bc (HEAD -> master) HEAD@{0}: reset: moving to 4d500
+1dbd17d HEAD@{1}: reset: moving to HEAD^
+4d500bc (HEAD -> master) HEAD@{2}: commit: appeal GPL
+1dbd17d HEAD@{3}: commit: add distributed
+acee284 HEAD@{4}: commit (initial): wrote a readme file
