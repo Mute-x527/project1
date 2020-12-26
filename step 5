@@ -1,0 +1,66 @@
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git add readme.txt
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   readme.txt
+
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commin -"git tracks changes"
+git: 'commin' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git commit -m"git tracks changes"
+[master 19f51a7] git tracks changes
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+73640@LAPTOP-R7VVSMU4 MINGW64 ~/learngit (master)
+$ git diff HEAD -- readme.txt
+diff --git a/readme.txt b/readme.txt
+index db28b2c..9a8b341 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,4 +1,4 @@
+ Git is a distributed version control system.
+ Git is free software distributed under the GPL.
+ Git has a mutable index called stage.
+-Git tracks changes.
+\ No newline at end of file
++Git tracks changes of files.
+\ No newline at end of file
+
